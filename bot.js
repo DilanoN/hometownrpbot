@@ -389,8 +389,7 @@ exports.start = function(SETUP) {
         }
         if (message.channel.id === WHITELIST_CHANNEL) {
           let embed = new Discord.RichEmbed()
-          .setAuthor(message.member.nickname ? message.member.nickname : message.author.tag,message.author.displayAvatarURL)
-          .setColor(3066993)
+          .setColor(2123412)
           .setTitle('NoordDijk Whitelist')
           .setDescription(message.content)
           .setTimestamp(new Date());
