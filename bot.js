@@ -254,7 +254,7 @@ exports.start = function(SETUP) {
   bot.on('ready',() => {
     log(LOG_LEVELS.INFO,'Started...');
     // bot.user.setGame('Roofstad', 'https://www.twitch.tv/RoqueTV');
-    bot.user.setActivity('NoordDijkRP',{'url':'https://www.twitch.tv/','type':'STREAMING'});
+    bot.user.setActivity('NoordDijk Roleplay',{'url':'https://www.twitch.tv/','type':'STREAMING'});
     bot.generateInvite(['ADMINISTRATOR']).then((link) => {
       log(LOG_LEVELS.INFO,`Invite URL - ${link}`);
     }).catch(null);
@@ -358,23 +358,6 @@ exports.start = function(SETUP) {
           .setAuthor(message.member.nickname ? message.member.nickname : message.author.tag,message.author.displayAvatarURL)
           .setColor(0x2894C2)
           .setTitle('Suggestie')
-          .setDescription(message.content)
-          .setTimestamp(new Date());
-          message.channel.send(embed).then((message) => {
-            const sent = message;
-            sent.react('👍').then(() => {
-              sent.react('👎').then(() => {
-                log(LOG_LEVELS.SPAM,'Completed suggestion message');
-              }).catch(console.error);
-            }).catch(console.error);
-          }).catch(console.error);
-          return message.delete();
-        }
-        if (message.channel.id === SREGELS_CHANNEL) {
-          let embed = new Discord.RichEmbed()
-          .setAuthor(message.member.nickname ? message.member.nickname : message.author.tag,message.author.displayAvatarURL)
-          .setColor(0x2894C2)
-          .setTitle('Server Regels')
           .setDescription(message.content)
           .setTimestamp(new Date());
           message.channel.send(embed).then((message) => {
