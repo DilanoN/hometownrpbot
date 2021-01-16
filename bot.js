@@ -85,7 +85,7 @@ exports.start = function(SETUP) {
   const MESSAGE_ID = SETUP.MESSAGE_ID;
   const SUGGESTION_CHANNEL = SETUP.SUGGESTION_CHANNEL;
   const MEDEDELING_CHANNEL = SETUP.MEDEDELING_CHANNEL;
-  const SREGELS_CHANNEL = SETUP.SREGELS_CHANNEL;
+  const WHITELIST_CHANNEL = SETUP.WHITELIST_CHANNEL;
   const DISCORDS_CHANNEL = SETUP.DISCORDS_CHANNEL;
   const BUG_CHANNEL = SETUP.BUG_CHANNEL;
   const BUG_LOG_CHANNEL = SETUP.BUG_LOG_CHANNEL;
@@ -381,6 +381,23 @@ exports.start = function(SETUP) {
             const sent = message;
             sent.react('🟢').then(() => {
               sent.react('🔴').then(() => {
+                log(LOG_LEVELS.SPAM,'Completed suggestion message');
+              }).catch(console.error);
+            }).catch(console.error);
+          }).catch(console.error);
+          return message.delete();
+        }
+        if (message.channel.id === WHITELIST_CHANNEL) {
+          let embed = new Discord.RichEmbed()
+          .setAuthor(message.member.nickname ? message.member.nickname : message.author.tag,message.author.displayAvatarURL)
+          .setColor(3066993)
+          .setTitle('NoordDijk Whitelist')
+          .setDescription(message.content)
+          .setTimestamp(new Date());
+          message.channel.send(embed).then((message) => {
+            const sent = message;
+            sent.react.then(() => {
+              sent.react.then(() => {
                 log(LOG_LEVELS.SPAM,'Completed suggestion message');
               }).catch(console.error);
             }).catch(console.error);
