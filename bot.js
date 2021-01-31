@@ -161,9 +161,9 @@ exports.start = function(SETUP) {
   const UpdateEmbed = function() {
     let dot = TICK_N % 2 === 0 ? 'Roofstad' : 'Roleplay';
     let embed = new Discord.RichEmbed()
-    .setAuthor("NoordDijk RP Server Status", "https://i.imgur.com/XEOTrnX.png")
+    .setAuthor("SouthSide RP Server Status", "https://i.imgur.com/XEOTrnX.png")
     .setColor(0x2894C2)
-    .setFooter(TICK_N % 2 === 0 ? '⚪ NoordDijk RP' : '⚫ NoordDijk RP')
+    .setFooter(TICK_N % 2 === 0 ? '⚪ SouthSide RP' : '⚫ SouthSide RP')
     .setTimestamp(new Date())
     .addField('\n\u200b\nHoe kan je de server joinen?','Je kan de server joinen doormiddel van **ndrp.vibegames.pro** in te voeren bij Direct Connect. Onderaan staat de server status om te kijken hoeveel mensen er online zijn en in de wachtrij staan.\n\u200b\n',false)
     if (STATUS !== undefined)
@@ -254,7 +254,7 @@ exports.start = function(SETUP) {
   bot.on('ready',() => {
     log(LOG_LEVELS.INFO,'Started...');
     // bot.user.setGame('Roofstad', 'https://www.twitch.tv/RoqueTV');
-    bot.user.setActivity('NoordDijk Roleplay',{'url':'https://www.twitch.tv/','type':'STREAMING'});
+    bot.user.setActivity('SouthSide Roleplay',{'url':'https://www.twitch.tv/','type':'STREAMING'});
     bot.generateInvite(['ADMINISTRATOR']).then((link) => {
       log(LOG_LEVELS.INFO,`Invite URL - ${link}`);
     }).catch(null);
@@ -374,7 +374,7 @@ exports.start = function(SETUP) {
           let embed = new Discord.RichEmbed()
           .setAuthor(message.member.nickname ? message.member.nickname : message.author.tag,message.author.displayAvatarURL)
           .setColor(3066993)
-          .setTitle('NoordDijk Mededeling')
+          .setTitle('SouthSide Mededeling')
           .setDescription(message.content)
           .setTimestamp(new Date());
           message.channel.send(embed).then((message) => {
@@ -390,7 +390,7 @@ exports.start = function(SETUP) {
         if (message.channel.id === WHITELIST_CHANNEL) {
           let embed = new Discord.RichEmbed()
           .setColor(2123412)
-          .setTitle('NoordDijk Whitelist')
+          .setTitle('SouthSide Whitelist')
           .setDescription(message.content)
           .setTimestamp(new Date());
           message.channel.send(embed).then((message) => {
