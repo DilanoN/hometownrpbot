@@ -254,7 +254,7 @@ exports.start = function(SETUP) {
   bot.on('ready',() => {
     log(LOG_LEVELS.INFO,'Started...');
     // bot.user.setGame('Roofstad', 'https://www.twitch.tv/RoqueTV');
-    bot.user.setActivity('SouthSide Roleplay',{'url':'https://www.twitch.tv/','type':'STREAMING'});
+    bot.user.setActivity('SouthSide RP',{'url':'https://www.twitch.tv/','type':'STREAMING'});
     bot.generateInvite(['ADMINISTRATOR']).then((link) => {
       log(LOG_LEVELS.INFO,`Invite URL - ${link}`);
     }).catch(null);
