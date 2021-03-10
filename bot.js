@@ -161,9 +161,9 @@ exports.start = function(SETUP) {
   const UpdateEmbed = function() {
     let dot = TICK_N % 2 === 0 ? 'Roofstad' : 'Roleplay';
     let embed = new Discord.RichEmbed()
-    .setAuthor("SouthSide RP Server Status", "https://i.imgur.com/XEOTrnX.png")
+    .setAuthor("Nieuwe RP Server Status", "https://i.imgur.com/FUOmFCv.png")
     .setColor(0x2894C2)
-    .setFooter(TICK_N % 2 === 0 ? '⚪ SouthSide RP' : '⚫ SouthSide RP')
+    .setFooter(TICK_N % 2 === 0 ? '⚪ Nieuwe RP' : '⚫ Nieuwe RP')
     .setTimestamp(new Date())
     .addField('\n\u200b\nHoe kan je de server joinen?','Je kan de server joinen doormiddel van **ndrp.vibegames.pro** in te voeren bij Direct Connect. Onderaan staat de server status om te kijken hoeveel mensen er online zijn en in de wachtrij staan.\n\u200b\n',false)
     if (STATUS !== undefined)
@@ -204,7 +204,7 @@ exports.start = function(SETUP) {
           // for (var i=0;i<players.length;i++) {
           //   fields[i%4 >= 2 ? 1 : 0] += `${players[i].name}${i % 2 === 0 ? '\u200e' : '\n\u200f'}`;
           // }
-          fields[0] = `**Inwoners:**\n`;
+          fields[0] = `**Burgers:**\n`;
           for (var i=0;i<players.length;i++) {
             fields[(i+1)%fieldCount] += `${players[i].name.substr(0,12)}\n`; // first 12 characters of players name
           }
@@ -254,7 +254,7 @@ exports.start = function(SETUP) {
   bot.on('ready',() => {
     log(LOG_LEVELS.INFO,'Started...');
     // bot.user.setGame('Roofstad', 'https://www.twitch.tv/RoqueTV');
-    bot.user.setActivity('SouthSide RP',{'url':'https://www.twitch.tv/','type':'STREAMING'});
+    bot.user.setActivity('Nieuwe RP',{'url':'https://www.twitch.tv/','type':'STREAMING'});
     bot.generateInvite(['ADMINISTRATOR']).then((link) => {
       log(LOG_LEVELS.INFO,`Invite URL - ${link}`);
     }).catch(null);
@@ -374,7 +374,7 @@ exports.start = function(SETUP) {
           let embed = new Discord.RichEmbed()
           .setAuthor(message.member.nickname ? message.member.nickname : message.author.tag,message.author.displayAvatarURL)
           .setColor(3066993)
-          .setTitle('SouthSide Mededeling')
+          .setTitle('Nieuwe Mededeling')
           .setDescription(message.content)
           .setTimestamp(new Date());
           message.channel.send(embed).then((message) => {
@@ -390,7 +390,7 @@ exports.start = function(SETUP) {
         if (message.channel.id === WHITELIST_CHANNEL) {
           let embed = new Discord.RichEmbed()
           .setColor(2123412)
-          .setTitle('SouthSide Whitelist')
+          .setTitle('Nieuwe Whitelist')
           .setDescription(message.content)
           .setTimestamp(new Date());
           message.channel.send(embed).then((message) => {
