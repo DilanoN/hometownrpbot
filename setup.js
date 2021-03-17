@@ -3,7 +3,7 @@ const readline = require('readline');
 
 const TEMPLATE = {
   'URL_SERVER': {
-    'message': 'Base url for fiveM server e.g. http://51.77.239.104:3048',
+    'message': 'Base url for fiveM server e.g. http://51.89.43.128:32715',
     'required': true,
   },
   'LOG_LEVEL': {

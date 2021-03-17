@@ -441,4 +441,11 @@ exports.start = function(SETUP) {
     }
   });
 
-  bot.login(process.env.token);
+  bot.login(process.env.token).then(null).catch(() => {
+    log(LOG_LEVELS.ERROR,'Unable to login check your login token');
+    console.error(e);
+    process.exit(1);
+  });
+
+  return bot;
+}
