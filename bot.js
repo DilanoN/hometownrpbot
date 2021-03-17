@@ -161,9 +161,9 @@ exports.start = function(SETUP) {
   const UpdateEmbed = function() {
     let dot = TICK_N % 2 === 0 ? 'Roofstad' : 'Roleplay';
     let embed = new Discord.RichEmbed()
-    .setAuthor("Nieuwe RP Server Status", "https://i.imgur.com/FUOmFCv.png")
+    .setAuthor("HomeTown Roleplay Server Status", "https://i.imgur.com/FUOmFCv.png")
     .setColor(0x2894C2)
-    .setFooter(TICK_N % 2 === 0 ? '⚪ Nieuwe RP' : '⚫ Nieuwe RP')
+    .setFooter(TICK_N % 2 === 0 ? '⚪ HomeTown Roleplay' : '⚫ HomeTown Roleplay')
     .setTimestamp(new Date())
     .addField('\n\u200b\nHoe kan je de server joinen?','Je kan de server joinen doormiddel van **ndrp.vibegames.pro** in te voeren bij Direct Connect. Onderaan staat de server status om te kijken hoeveel mensen er online zijn en in de wachtrij staan.\n\u200b\n',false)
     if (STATUS !== undefined)
@@ -254,7 +254,7 @@ exports.start = function(SETUP) {
   bot.on('ready',() => {
     log(LOG_LEVELS.INFO,'Started...');
     // bot.user.setGame('Roofstad', 'https://www.twitch.tv/RoqueTV');
-    bot.user.setActivity('Nieuwe RP',{'url':'https://www.twitch.tv/','type':'STREAMING'});
+    bot.user.setActivity('HomeTown Roleplay',{'url':'https://www.twitch.tv/','type':'STREAMING'});
     bot.generateInvite(['ADMINISTRATOR']).then((link) => {
       log(LOG_LEVELS.INFO,`Invite URL - ${link}`);
     }).catch(null);
