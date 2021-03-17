@@ -2,9 +2,9 @@
   "name": "FiveM-Server-Status-bot",
   "version": "1.0.0",
   "description": "FiveM Server Status",
-  "main": "bot.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node ./bot.js",
+    "start": "node ./index.js",
     "update": "git pull && npm install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
